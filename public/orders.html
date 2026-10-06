@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Orders – Flipcart</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main class="wrap">
+  <div id="placed-banner"></div>
+  <div class="orders-grid">
+    <aside class="filters"><h3>Filters</h3>
+      <div class="f-block"><h4>Order status</h4><div id="status-filter"></div></div></aside>
+    <div>
+      <div class="box" style="margin-bottom:8px;padding:10px 14px;display:flex;gap:8px"><input class="field-in" id="order-search" placeholder="Search your orders here"><button class="btn small" id="order-search-btn">🔍 Search orders</button></div>
+      <div id="orders"></div>
+    </div>
+  </div>
+</main>
+<div id="site-footer"></div>
+<script src="js/api.js"></script>
+<script src="js/orders.js"></script>
+</body>
+</html>

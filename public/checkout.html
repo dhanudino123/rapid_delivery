@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout – Flipcart</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main class="wrap">
+  <div class="cart-grid">
+    <div>
+      <div class="step box"><div class="step-head"><span class="n">1</span> LOGIN ✓</div><div class="step-body" id="login-info"></div></div>
+      <div class="step box"><div class="step-head"><span class="n">2</span> DELIVERY ADDRESS</div><div class="step-body">
+        <div id="addr-list"></div>
+        <button class="link-btn" id="toggle-addr">+ Add a new address</button>
+        <form id="addr-form" class="form-grid" hidden novalidate>
+          <input class="field-in" name="name" placeholder="Name" required>
+          <input class="field-in" name="phone" placeholder="10-digit mobile number" maxlength="10" inputmode="numeric" required>
+          <input class="field-in" name="pincode" placeholder="Pincode" maxlength="6" inputmode="numeric" required>
+          <input class="field-in" name="city" placeholder="City / District" required>
+          <input class="field-in full" name="line1" placeholder="Address (House No, Building, Street, Area)" required>
+          <input class="field-in" name="state" placeholder="State" required>
+          <select class="field-in" name="kind"><option>Home</option><option>Work</option></select>
+          <div class="full"><div class="form-msg" id="addr-msg"></div><button class="btn small" type="submit">Save address</button></div>
+        </form></div></div>
+      <div class="step box"><div class="step-head"><span class="n">3</span> ORDER SUMMARY</div><div class="step-body" id="order-summary"></div></div>
+      <div class="step box" id="pay-step"><div class="step-head"><span class="n">4</span> PAYMENT OPTIONS</div><div class="step-body">
+        <div class="notice" style="margin:0 0 14px">🧪 <b>Test mode</b> – no real money is charged. Use card <b>4111 1111 1111 1111</b> (any future expiry, any CVV).
+          To see a failed payment use card <b>4000 0000 0000 0002</b>, UPI <b>fail@upi</b> or bank <b>State Bank of India</b>.</div>
+
+        <label class="pay"><input type="radio" name="pay" value="UPI" checked> <span>📲 <b>UPI</b><br><small class="muted">Pay by any UPI app</small></span></label>
+        <div class="pay-form" data-for="UPI">
+          <input class="field-in" id="upi_id" placeholder="Enter your UPI ID (e.g. name@okhdfcbank)" autocomplete="off">
+        </div>
+
+        <label class="pay"><input type="radio" name="pay" value="CARD"> <span>💳 <b>Credit / Debit Card</b><br><small class="muted">Visa, Mastercard, RuPay, Amex</small></span></label>
+        <div class="pay-form" data-for="CARD" hidden>
+          <div class="form-grid">
+            <input class="field-in full" id="card_number" placeholder="Card number" inputmode="numeric" maxlength="23" autocomplete="off">
+            <input class="field-in full" id="card_name" placeholder="Name on card" autocomplete="off">
+            <input class="field-in" id="expiry" placeholder="MM/YY" inputmode="numeric" maxlength="5" autocomplete="off">
+            <input class="field-in" id="cvv" placeholder="CVV" type="password" inputmode="numeric" maxlength="4" autocomplete="off">
+          </div>
+        </div>
+
+        <label class="pay"><input type="radio" name="pay" value="NETBANKING"> <span>🏦 <b>Net Banking</b><br><small class="muted">All major Indian banks</small></span></label>
+        <div class="pay-form" data-for="NETBANKING" hidden>
+          <select class="field-in" id="bank"><option value="">Choose your bank</option></select>
+        </div>
+
+        <label class="pay"><input type="radio" name="pay" value="COD"> <span>💵 <b>Cash on Delivery</b><br><small class="muted">Pay when your order arrives</small></span></label>
+        <div class="pay-form" data-for="COD" hidden><div class="muted">Pay with cash or UPI to the delivery partner.</div></div>
+
+        <div class="form-msg error" id="order-msg" role="alert" style="margin-top:14px"></div>
+        <button class="btn order" id="place" style="margin-top:14px">Pay &amp; place order</button></div></div>
+    </div>
+    <div class="box price-box" id="price-box">
+      <h3>Price details</h3><div class="price-rows" id="price-rows"></div><div class="save-msg" id="save-msg"></div>
+    </div>
+  </div>
+</main>
+<div id="site-footer"></div>
+<script src="js/api.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>

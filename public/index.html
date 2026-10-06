@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flipcart – Online Shopping Site for Mobiles, Electronics, Fashion & More</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<nav class="cat-strip"><div class="wrap" id="cat-strip"></div></nav>
+<main>
+  <section id="home-view" hidden>
+    <div class="carousel">
+      <div class="slides" id="slides"></div>
+      <button class="car-btn prev" id="car-prev" aria-label="Previous">❮</button>
+      <button class="car-btn next" id="car-next" aria-label="Next">❯</button>
+      <div class="dots" id="dots"></div>
+    </div>
+    <div class="wrap" id="home-rows"></div>
+  </section>
+  <section id="list-view" class="wrap" hidden>
+    <div class="listing">
+      <aside class="filters" id="filters"></aside>
+      <div class="results">
+        <div class="results-head"><h1 id="list-title"></h1><div class="muted" id="list-count"></div></div>
+        <div class="sortbar" id="sortbar"></div>
+        <div class="grid" id="grid"></div>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="js/api.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

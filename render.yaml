@@ -1,0 +1,14 @@
+# Render.com blueprint: New + > Blueprint > pick your GitHub repo
+services:
+  - type: web
+    name: flipcart
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --workers 1 --threads 4 --bind 0.0.0.0:$PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.3
+      - key: ADMIN_PASSWORD
+        sync: false        # you will be asked to type it in the Render dashboard

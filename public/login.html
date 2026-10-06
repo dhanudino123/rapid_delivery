@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login – Flipcart</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main>
+  <div class="auth">
+    <div class="auth-side"><div><h1>Login</h1><p>Get access to your Orders, Cart and Recommendations</p></div><div class="art">🛍️</div></div>
+    <form class="auth-form" id="login-form" novalidate>
+      <div class="form-msg" id="msg" role="alert"></div>
+      <div class="f"><label for="email">Enter Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+      <div class="f"><label for="password">Enter Password</label><input id="password" name="password" type="password" autocomplete="current-password" required></div>
+      <button class="btn" type="submit">Login</button>
+      <a class="auth-alt" href="signup.html">New to Flipcart? Create an account</a>
+      <div class="demo-hint" id="demo-hint" hidden>Demo admin: <b>admin@flipcart.com</b> / <b>admin123</b></div>
+    </form>
+  </div>
+</main>
+<div id="site-footer"></div>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
